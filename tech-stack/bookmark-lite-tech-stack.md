@@ -7,7 +7,7 @@
 | 产品名称 | 书签管理 Web 应用 |
 | 文档类型 | 技术栈文档 |
 | 文档版本 | v1.0 |
-| 关联 PRD | docs/prd/bookmark-lite-prd.md |
+| 关联 PRD | prd/bookmark-lite-prd.md |
 | 技术方向 | Next.js 全栈开发 |
 
 ## 2. 技术栈总览
