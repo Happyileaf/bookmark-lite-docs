@@ -16,6 +16,7 @@
 
 | 分类 | 技术选型 | 说明 |
 |---|---|---|
+| JavaScript 运行时 | Node.js（LTS） | 用于承载 Next.js 开发、构建与服务端运行环境 |v
 | Web 框架 | Next.js | 用于构建全栈 Web 应用 |
 | 开发语言 | TypeScript | 用于提供类型约束和提升可维护性 |
 | UI 框架 | React | 用于构建交互式用户界面 |
@@ -119,6 +120,7 @@ Tailwind CSS 用于快速构建响应式页面样式，shadcn/ui 用于提供按
 
 | 技术 | 用途 |
 |---|---|
+| Node.js（LTS） | Next.js 本地开发、构建打包与服务端运行时 |
 | tsx | TypeScript 脚本执行 |
 | dotenv | 环境变量管理 |
 
@@ -133,6 +135,7 @@ Tailwind CSS 用于快速构建响应式页面样式，shadcn/ui 用于提供按
 
 | 分类 | 技术选型 |
 |---|---|
+| 运行时环境 | Node.js（LTS） |
 | 环境变量管理 | Vercel Environment Variables |
 | 日志 | Vercel Logs |
 | 访问分析 | Vercel Analytics |
