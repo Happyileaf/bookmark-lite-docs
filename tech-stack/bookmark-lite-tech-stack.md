@@ -16,12 +16,13 @@
 
 | 分类 | 技术选型 | 说明 |
 |---|---|---|
-| JavaScript 运行时 | Node.js（LTS） | 用于承载 Next.js 开发、构建与服务端运行环境 |v
+| JavaScript 运行时 | Node.js（LTS） | 用于承载 Next.js 开发、构建与服务端运行环境 |
 | Web 框架 | Next.js | 用于构建全栈 Web 应用 |
 | 开发语言 | TypeScript | 用于提供类型约束和提升可维护性 |
 | UI 框架 | React | 用于构建交互式用户界面 |
 | 路由模式 | Next.js App Router | 用于组织页面和布局 |
 | 服务端能力 | Server Actions / Route Handlers | 用于承载 Next.js 全栈服务端能力 |
+| HTTP 客户端 | Axios | 用于服务端调用外部 API、统一超时与错误处理 |
 | 数据库 | PostgreSQL | 用于存储结构化业务数据 |
 | ORM | Prisma | 用于数据库建模、迁移和类型安全访问 |
 | 认证方案 | Auth.js（NextAuth） | 用于邮箱密码登录、会话管理和认证上下文获取 |
@@ -41,19 +42,27 @@
 
 ## 3. 核心技术选型
 
-### 3.4 PostgreSQL
+### 3.1 Node.js
+
+Node.js（LTS）作为应用运行时，承载 Next.js 的本地开发、构建打包与服务端执行环境。
+
+### 3.2 Axios
+
+Axios 用于封装对外部 HTTP 服务的请求能力，支持超时控制、统一错误处理与请求拦截。
+
+### 3.3 PostgreSQL
 
 PostgreSQL 用于存储用户、书签、标签、书签标签关联关系、角色、会话、审计日志等结构化数据。
 
-### 3.5 Prisma
+### 3.4 Prisma
 
 Prisma 用于定义数据库模型、管理数据库迁移，并在 TypeScript 中提供类型安全的数据访问能力。
 
-### 3.6 Auth.js
+### 3.5 Auth.js
 
 Auth.js 用于承载登录态与会话管理能力，支持在服务端按统一方式读取当前用户身份，便于和 RBAC 及数据范围校验结合。
 
-### 3.7 Tailwind CSS + shadcn/ui
+### 3.6 Tailwind CSS + shadcn/ui
 
 Tailwind CSS 用于快速构建响应式页面样式，shadcn/ui 用于提供按钮、输入框、弹窗、表格、菜单、提示等基础 UI 组件。
 
@@ -64,6 +73,7 @@ Tailwind CSS 用于快速构建响应式页面样式，shadcn/ui 用于提供按
 | Next.js Route Handlers | 服务端接口能力 |
 | Next.js Middleware | 登录态检查、路由级访问控制 |
 | Auth.js | 认证与会话获取 |
+| Axios | 外部 HTTP 接口请求与统一错误处理 |
 | Prisma | 数据访问能力 |
 | Zod | 服务端入参校验 |
 | Pino | 结构化日志输出 |
