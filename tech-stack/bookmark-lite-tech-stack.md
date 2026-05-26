@@ -14,31 +14,36 @@
 
 本项目采用 Next.js 全栈开发模式，技术栈围绕 Web 页面、服务端能力、数据存储、身份认证、权限控制、导入导出、安全、测试和部署展开。
 
-| 分类 | 技术选型 | 说明 |
-|---|---|---|
-| JavaScript 运行时 | Node.js（LTS） | 用于承载 Next.js 开发、构建与服务端运行环境 |
-| Web 框架 | Next.js | 用于构建全栈 Web 应用 |
-| 开发语言 | TypeScript | 用于提供类型约束和提升可维护性 |
-| UI 框架 | React | 用于构建交互式用户界面 |
-| 路由模式 | Next.js App Router | 用于组织页面和布局 |
-| 服务端能力 | Server Actions / Route Handlers | 用于承载 Next.js 全栈服务端能力 |
-| HTTP 客户端 | Axios | 用于服务端调用外部 API、统一超时与错误处理 |
-| 数据库 | PostgreSQL | 用于存储结构化业务数据 |
-| ORM | Prisma | 用于数据库建模、迁移和类型安全访问 |
-| 认证方案 | Auth.js（NextAuth） | 用于邮箱密码登录、会话管理和认证上下文获取 |
-| 鉴权方案 | Next.js Middleware + 服务端权限守卫 | 用于 RBAC 与数据范围鉴权 |
-| 密码安全 | Argon2id（优先）或 bcrypt | 用于密码哈希存储 |
-| 传输安全 | HTTPS/TLS | 用于保障登录和密码修改过程的传输加密 |
-| 文件解析 | csv-parse / fast-csv + cheerio | 用于 CSV/JSON/HTML（浏览器书签）导入导出解析 |
-| 样式方案 | Tailwind CSS | 用于快速构建响应式界面 |
-| UI 组件库 | shadcn/ui | 用于基础 UI 组件建设 |
-| 表单处理 | React Hook Form | 用于表单状态管理 |
-| 端到端测试 | Playwright | 用于核心用户流程测试 |
-| 代码规范 | ESLint | 用于代码质量检查 |
-| 代码格式化 | Prettier | 用于统一代码格式 |
-| 日志与观测 | Pino + Vercel Logs + Vercel Analytics | 用于运行日志、访问统计与基础观测 |
-| 定时任务 | Vercel Cron（或等价调度能力） | 用于回收站保留期、审计日志保留期清理任务 |
-| 部署平台 | Vercel | 用于部署 Next.js 应用 |
+版本口径说明：
+
+- `x.y.x` 表示锁定到主次版本，补丁版本按月度升级。
+- 托管能力（如 Vercel Logs、Vercel Analytics、Vercel Cron）不提供可锁定 SDK 版本，按平台能力管理。
+
+| 分类 | 技术选型 | 建议版本 | 说明 |
+|---|---|---|---|
+| JavaScript 运行时 | Node.js（LTS） | 24.16.x LTS（Krypton） | 用于承载 Next.js 开发、构建与服务端运行环境 |
+| Web 框架 | Next.js | 16.2.x | 用于构建全栈 Web 应用 |
+| 开发语言 | TypeScript | 6.0.x | 用于提供类型约束和提升可维护性 |
+| UI 框架 | React | 19.2.x | 用于构建交互式用户界面 |
+| 路由模式 | Next.js App Router | 16.2.x（随 Next.js） | 用于组织页面和布局 |
+| 服务端能力 | Server Actions / Route Handlers | 16.2.x（随 Next.js） | 用于承载 Next.js 全栈服务端能力 |
+| HTTP 客户端 | Axios | 1.16.x | 用于服务端调用外部 API、统一超时与错误处理 |
+| 数据库 | PostgreSQL | 16.x | 用于存储结构化业务数据 |
+| ORM | Prisma | 7.8.x | 用于数据库建模、迁移和类型安全访问 |
+| 认证方案 | Auth.js（NextAuth） | next-auth 4.24.x | 用于邮箱密码登录、会话管理和认证上下文获取 |
+| 鉴权方案 | Next.js Middleware + 服务端权限守卫 | Next.js 16.2.x + 自研守卫 | 用于 RBAC 与数据范围鉴权 |
+| 密码安全 | Argon2id（优先）或 bcrypt | argon2 0.44.x / bcrypt 6.0.x | 用于密码哈希存储 |
+| 传输安全 | HTTPS/TLS | TLS 1.2+（推荐 TLS 1.3） | 用于保障登录和密码修改过程的传输加密 |
+| 文件解析 | csv-parse / fast-csv + cheerio | 6.2.x / 5.0.x / 1.2.x | 用于 CSV/JSON/HTML（浏览器书签）导入导出解析 |
+| 样式方案 | Tailwind CSS | 4.3.x | 用于快速构建响应式界面 |
+| UI 组件库 | shadcn/ui | 组件代码入库锁定（基于 Radix UI 1.1.x） | 用于基础 UI 组件建设 |
+| 表单处理 | React Hook Form | 7.76.x | 用于表单状态管理 |
+| 端到端测试 | Playwright | 1.60.x | 用于核心用户流程测试 |
+| 代码规范 | ESLint | 10.4.x | 用于代码质量检查 |
+| 代码格式化 | Prettier | 3.8.x | 用于统一代码格式 |
+| 日志与观测 | Pino + Vercel Logs + Vercel Analytics | Pino 10.3.x + Vercel 托管能力 | 用于运行日志、访问统计与基础观测 |
+| 定时任务 | Vercel Cron（或等价调度能力） | Vercel 托管能力 | 用于回收站保留期、审计日志保留期清理任务 |
+| 部署平台 | Vercel | Vercel 托管平台 | 用于部署 Next.js 应用 |
 
 ## 3. 核心技术选型
 
